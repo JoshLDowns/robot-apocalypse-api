@@ -16,6 +16,10 @@ app.oauth = oAuth2Server({
   debug: true,
 });
 
+//Logging
+const morgan = require("morgan")
+const logger = morgan(':method :url :status :res[content-length] - :response-time ms');
+
 const testAPIService = require("./test/testAPIService.js");
 const testAPIRoutes = require("./test/testAPIRoutes.js")(
   express.Router(),
@@ -30,6 +34,7 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(app.oauth.errorHandler());
+app.use(logger);
 app.use("/auth", routes);
 app.use("/test", testAPIRoutes);
 

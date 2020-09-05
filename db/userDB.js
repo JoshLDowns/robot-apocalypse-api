@@ -16,7 +16,7 @@ var crypto = require("crypto");
 function register(username, password, cbFunc) {
   var shaPass = crypto.createHash("sha256").update(password).digest("hex");
 
-  const query = `INSERT INTO users (username, user_password) VALUES ('${username}', '${shaPass}')`;
+  const query = `INSERT INTO users (username, user_password, top_score, active_game) VALUES ('${username}', '${shaPass}', '0', false)`;
 
   pgPool.query(query, cbFunc);
 }
