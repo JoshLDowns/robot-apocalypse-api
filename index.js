@@ -2,6 +2,7 @@
 const pgPool = require("./db/pgWrapper");
 const tokenDB = require("./db/tokenDB")(pgPool);
 const userDB = require("./db/userDB")(pgPool);
+const gameDB = require("./db/gameDB")(pgPool);
 
 // OAuth imports
 const oAuthService = require("./auth/tokenService")(userDB, tokenDB);
@@ -29,7 +30,8 @@ const testAPIRoutes = require("./test/testAPIRoutes.js")(
 
 // Auth and routes
 const authenticator = require("./auth/authenticator")(userDB);
-const routes = require("./auth/routes")(express.Router(), app, authenticator);
+const gameAuthenticator = require("./auth/gameAuth")(gameDB);
+const routes = require("./auth/routes")(express.Router(), app, authenticator, gameAuthenticator);
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -8,6 +8,7 @@ module.exports = (injectedPgPool) => {
     getUser: getUser,
     getUserInfo: getUserInfo,
     isValidUser: isValidUser,
+    updateUser: updateUser
   };
 };
 
@@ -61,4 +62,10 @@ function isValidUser(username, cbFunc) {
   };
 
   pgPool.query(query, checkUsrcbFunc);
+}
+
+function updateUser(id, field, value, cbFunc) {
+  const updateQuery = `UPDATE users SET ${field} = ${value} WHERE id = ${id}`
+
+  pgPool.query(updateQuery, cbFunc)
 }

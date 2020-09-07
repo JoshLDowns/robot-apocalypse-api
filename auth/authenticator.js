@@ -7,6 +7,7 @@ module.exports = (injectedUserDB) => {
     registerUser: registerUser,
     login: login,
     getUser: getUser,
+    update: update,
   };
 };
 
@@ -43,6 +44,16 @@ function getUser(req, res) {
 }
 
 function login(query, res) {}
+
+function update(req, res) {
+  userDB.updateUser(req.body.id, req.body.field, req.body.value, (response) => {
+    sendResponse(
+      res,
+      response.error === undefined ? "ok" : "Something went wrong!",
+      response.error
+    );
+  })
+}
 
 function sendResponse(res, message, error) {
 
