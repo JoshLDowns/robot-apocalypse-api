@@ -8,6 +8,8 @@ module.exports = (injectedGameDB) => {
     getGame: getGame,
     insertRooms: insertRooms,
     getRooms: getRooms,
+    insertPlayer: insertPlayer,
+    getPlayer: getPlayer,
   };
 };
 
@@ -37,7 +39,6 @@ function getGame(req, res) {
 }
 
 function insertRooms(req, res) {
-  console.log(req.body);
   gameDB.buildRooms(
     req.body.userId,
     req.body.gameId,
@@ -54,6 +55,33 @@ function insertRooms(req, res) {
 
 function getRooms(req, res) {
   gameDB.getRooms(req.query.gameId, (error, response) => {
+    sendResponse(
+      res,
+      response.error === undefined ? response : "Something went wrong!",
+      response.error
+    );
+  });
+}
+
+function insertPlayer(req, res) {
+  console.log(req.body);
+  gameDB.buildPlayer(
+    req.body.userId,
+    req.body.name,
+    req.body.gameId,
+    req.body.difficulty,
+    (error, response) => {
+      sendResponse(
+        res,
+        response.error === undefined ? response : "Something went wrong!",
+        response.error
+      );
+    }
+  );
+}
+
+function getPlayer(req, res) {
+  gameDB.getPlayer(req.query.gameId, (error, response) => {
     sendResponse(
       res,
       response.error === undefined ? response : "Something went wrong!",

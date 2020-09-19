@@ -1,0 +1,61 @@
+class Player {
+  constructor(
+    user_id,
+    name,
+    max_health,
+    health,
+    attack,
+    damage_base,
+    damage_mod,
+    status_one,
+    status_two,
+    ability_one,
+    ability_one_qty,
+    ability_one_dmg,
+    ability_one_mod,
+    ability_two,
+    ability_two_qty,
+    ability_two_dmg,
+    ability_two_mod,
+    ability_three,
+    ability_three_qty,
+    ability_three_dmg,
+    ability_three_mod,
+    diode,
+    map_east,
+    map_west,
+    map_north,
+    game_id
+  ) {
+    this.queryArray = [
+      user_id,
+      name,
+      max_health,
+      health,
+      attack,
+      damage_base,
+      damage_mod,
+      status_one,
+      status_two,
+      ability_one,
+      ability_one_qty,
+      ability_one_dmg,
+      ability_one_mod,
+      ability_two,
+      ability_two_qty,
+      ability_two_dmg,
+      ability_two_mod,
+      ability_three,
+      ability_three_qty,
+      ability_three_dmg,
+      ability_three_mod,
+      diode,
+      map_east,
+      map_west,
+      map_north,
+      game_id
+    ]
+  }
+}
+
+module.exports = Player;

@@ -38,7 +38,7 @@ class Room {
       intobject,
       intobject_inventory,
       secret,
-      Math.floor(Math.random() + 10 + 1) <= difficulty,
+      Math.floor(Math.random() * 10 + 1) <= difficulty,
       false,
       room_id,
     ];

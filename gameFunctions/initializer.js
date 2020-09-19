@@ -1,12 +1,15 @@
 const Room = require("../gameClasses/roomClass");
+const Player = require("../gameClasses/playerClass");
 
 module.exports = {
   generateRooms: generateRooms,
+  generatePlayer: generatePlayer,
 };
 
 function generateRooms(user, game, difficulty) {
   //Rooms
   //Home Base (You can trade in Scrap Metal here to restore health);
+  console.log(difficulty);
   let falloutBunker = new Room(
     user,
     game,
@@ -31,7 +34,7 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0,
+    10,
     "falloutBunker"
   );
   //Robotics United Towers
@@ -56,7 +59,7 @@ function generateRooms(user, game, difficulty) {
     "Sign",
     null,
     null,
-    0,
+    10,
     "RUW_Entrance"
   );
   let RUW_WelcomeDesk = new Room(
@@ -270,7 +273,7 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0,
+    10,
     "RUW_ServerW"
   );
   let RUW_ParkingLot = new Room(
@@ -293,7 +296,7 @@ function generateRooms(user, game, difficulty) {
     "Large Chest",
     JSON.stringify(["Particle Battery", "EMP", "Thick Carbon Coating"]),
     null,
-    0,
+    10,
     "RUW_ParkingLot"
   );
   //R.U. East
@@ -317,7 +320,7 @@ function generateRooms(user, game, difficulty) {
     "Sign",
     null,
     null,
-    0,
+    10,
     "RUE_Entrance"
   );
   let RUE_WelcomeDesk = new Room(
@@ -480,7 +483,7 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0,
+    10,
     "RUE_SupplyCloset"
   );
   let RUE_AdvWeapons = new Room(
@@ -555,7 +558,7 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0,
+    10,
     "RUE_ServerE"
   );
   //R.U. North
@@ -579,7 +582,7 @@ function generateRooms(user, game, difficulty) {
     "Sign",
     null,
     null,
-    0,
+    10,
     "RUN_Entrance"
   );
   let RUN_WelcomeDesk = new Room(
@@ -765,7 +768,7 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0,
+    10,
     "RUN_aiLab"
   );
   let RUN_Hallway3N = new Room(
@@ -811,7 +814,7 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0,
+    10,
     "RUN_MainServer"
   );
   let RUN_PresOffice = new Room(
@@ -834,7 +837,7 @@ function generateRooms(user, game, difficulty) {
     "Computer",
     JSON.stringify([]),
     null,
-    0,
+    10,
     "RUN_PresOffice"
   );
   let RUN_SecretStairwell = new Room(
@@ -880,7 +883,7 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0,
+    10,
     "RUN_BasementLanding"
   );
   let RUN_FalloutWarehouse = new Room(
@@ -912,7 +915,7 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0,
+    10,
     "RUN_FalloutWarehouse"
   );
   let RUN_BasementHallway = new Room(
@@ -971,7 +974,7 @@ function generateRooms(user, game, difficulty) {
     "Desk",
     JSON.stringify(["Letter"]),
     null,
-    0,
+    10,
     "RUN_Vault"
   );
 
@@ -1017,4 +1020,37 @@ function generateRooms(user, game, difficulty) {
     RUN_BasementHallway.queryArray,
     RUN_Vault.queryArray,
   ];
+}
+
+function generatePlayer(userId, name, gameId, difficulty) {
+  const player = new Player (
+    userId,
+    name,
+    difficulty === 'easy' ? 70 : difficulty === 'med' ? 60 : 50,
+    difficulty === 'easy' ? 70 : difficulty === 'med' ? 60 : 50,
+    "Particle Beam",
+    8,
+    6,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    false,
+    false,
+    false,
+    false,
+    gameId
+  )
+
+  return player.queryArray;
 }
