@@ -14,10 +14,11 @@ class Room {
     down,
     keycard,
     map,
-    intObject,
-    intObject_inventory,
+    intobject,
+    intobject_inventory,
     secret,
-    difficulty
+    difficulty,
+    room_id,
   ) {
     this.queryArray = [
       user_id,
@@ -34,11 +35,12 @@ class Room {
       down,
       keycard,
       map,
-      intObject,
-      intObject_inventory,
+      intobject,
+      intobject_inventory,
       secret,
       Math.floor(Math.random() + 10 + 1) <= difficulty,
       false,
+      room_id,
     ];
   }
 }

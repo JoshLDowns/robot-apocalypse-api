@@ -1,10 +1,7 @@
 const Room = require("../gameClasses/roomClass");
 
-module.exports = () => {
-  return {
-    generateRooms: generateRooms,
-    generatePlayer: generatePlayer,
-  };
+module.exports = {
+  generateRooms: generateRooms,
 };
 
 function generateRooms(user, game, difficulty) {
@@ -34,7 +31,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0
+    0,
+    "falloutBunker"
   );
   //Robotics United Towers
   //R.U. West
@@ -58,7 +56,8 @@ function generateRooms(user, game, difficulty) {
     "Sign",
     null,
     null,
-    0
+    0,
+    "RUW_Entrance"
   );
   let RUW_WelcomeDesk = new Room(
     user,
@@ -82,7 +81,8 @@ function generateRooms(user, game, difficulty) {
     "Desk",
     JSON.stringify(["Plasma Grenade"]),
     null,
-    difficulty
+    difficulty,
+    "RUW_WelcomeDesk"
   );
   let RUW_BreakRoom = new Room(
     user,
@@ -104,7 +104,8 @@ function generateRooms(user, game, difficulty) {
     "Refridgerator",
     JSON.stringify([]),
     null,
-    difficulty
+    difficulty,
+    "RUW_BreakRoom"
   );
   let RUW_Hallway1N = new Room(
     user,
@@ -126,7 +127,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    diffculty
+    difficulty,
+    "RUW_Hallway1N"
   );
   let RUW_ExpLabs = new Room(
     user,
@@ -148,7 +150,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUW_ExpLabs"
   );
   let RUW_Cubicle1 = new Room(
     user,
@@ -170,7 +173,8 @@ function generateRooms(user, game, difficulty) {
     "Desk",
     JSON.stringify([]),
     null,
-    difficulty
+    difficulty,
+    "RUW_Cubicle1"
   );
   let RUW_Hallway1S = new Room(
     user,
@@ -192,7 +196,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUW_Hallway1S"
   );
   let RUW_Office = new Room(
     user,
@@ -214,7 +219,8 @@ function generateRooms(user, game, difficulty) {
     "Filing Cabinet",
     JSON.stringify(["Portable Shield"]),
     null,
-    difficulty
+    difficulty,
+    "RUW_Office"
   );
   let RUW_FabUnit = new Room(
     user,
@@ -236,7 +242,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUW_FabUnit"
   );
   let RUW_ServerW = new Room(
     user,
@@ -263,7 +270,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0
+    0,
+    "RUW_ServerW"
   );
   let RUW_ParkingLot = new Room(
     user,
@@ -285,7 +293,8 @@ function generateRooms(user, game, difficulty) {
     "Large Chest",
     JSON.stringify(["Particle Battery", "EMP", "Thick Carbon Coating"]),
     null,
-    0
+    0,
+    "RUW_ParkingLot"
   );
   //R.U. East
   let RUE_Entrance = new Room(
@@ -308,7 +317,8 @@ function generateRooms(user, game, difficulty) {
     "Sign",
     null,
     null,
-    0
+    0,
+    "RUE_Entrance"
   );
   let RUE_WelcomeDesk = new Room(
     user,
@@ -332,7 +342,8 @@ function generateRooms(user, game, difficulty) {
     "Desk",
     JSON.stringify(["Repair Kit"]),
     null,
-    difficulty
+    difficulty,
+    "RUE_WelcomeDesk"
   );
   let RUE_Cubicle2 = new Room(
     user,
@@ -354,7 +365,8 @@ function generateRooms(user, game, difficulty) {
     "Desk",
     JSON.stringify(["Plasma Grenade"]),
     null,
-    difficulty
+    difficulty,
+    "RUE_Cubicle2"
   );
   let RUE_Hallway1N = new Room(
     user,
@@ -376,7 +388,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUE_Hallway1N"
   );
   let RUE_QA = new Room(
     user,
@@ -398,7 +411,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUE_QA"
   );
   let RUE_Charging = new Room(
     user,
@@ -420,7 +434,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUE_Charging"
   );
   let RUE_Hallway1S = new Room(
     user,
@@ -442,7 +457,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUE_Hallway1S"
   );
   let RUE_SupplyCloset = new Room(
     user,
@@ -464,7 +480,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0
+    0,
+    "RUE_SupplyCloset"
   );
   let RUE_AdvWeapons = new Room(
     user,
@@ -486,7 +503,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUE_AdvWeapons"
   );
   let RUE_FabUnit = new Room(
     user,
@@ -508,7 +526,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUE_FabUnit"
   );
   let RUE_ServerE = new Room(
     user,
@@ -536,7 +555,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0
+    0,
+    "RUE_ServerE"
   );
   //R.U. North
   let RUN_Entrance = new Room(
@@ -559,7 +579,8 @@ function generateRooms(user, game, difficulty) {
     "Sign",
     null,
     null,
-    0
+    0,
+    "RUN_Entrance"
   );
   let RUN_WelcomeDesk = new Room(
     user,
@@ -583,7 +604,8 @@ function generateRooms(user, game, difficulty) {
     "Desk",
     JSON.stringify(["Thick Carbon Coating"]),
     null,
-    difficulty
+    difficulty,
+    "RUN_WelcomeDesk"
   );
   let RUN_Cubicle3 = new Room(
     user,
@@ -605,7 +627,8 @@ function generateRooms(user, game, difficulty) {
     "Computer",
     JSON.stringify([]),
     null,
-    difficulty
+    difficulty,
+    "RUN_Cubicle3"
   );
   let RUN_Hallway1E = new Room(
     user,
@@ -627,7 +650,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUN_Hallway1E"
   );
   let RUN_AdminOffice = new Room(
     user,
@@ -647,9 +671,10 @@ function generateRooms(user, game, difficulty) {
     null,
     "n",
     "Filing Cabinet",
-    ["Smoke Bomb"],
+    JSON.stringify(["Smoke Bomb"]),
     null,
-    difficulty
+    difficulty,
+    "RUN_AdminOffice"
   );
   let RUN_Cubicle4 = new Room(
     user,
@@ -671,7 +696,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUN_Cubicle4"
   );
   let RUN_Hallway1W = new Room(
     user,
@@ -693,7 +719,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     "picture",
-    difficulty
+    difficulty,
+    "RUN_Hallway1W"
   );
   let RUN_Treasury = new Room(
     user,
@@ -713,9 +740,10 @@ function generateRooms(user, game, difficulty) {
     null,
     "n",
     "Broken Safe",
-    ["Particle Battery"],
+    JSON.stringify(["Particle Battery"]),
     null,
-    difficulty
+    difficulty,
+    "RUN_Treasury"
   );
   let RUN_aiLab = new Room(
     user,
@@ -737,7 +765,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0
+    0,
+    "RUN_aiLab"
   );
   let RUN_Hallway3N = new Room(
     user,
@@ -759,7 +788,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUN_Hallway3N"
   );
   let RUN_MainServer = new Room(
     user,
@@ -781,7 +811,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0
+    0,
+    "RUN_MainServer"
   );
   let RUN_PresOffice = new Room(
     user,
@@ -803,7 +834,8 @@ function generateRooms(user, game, difficulty) {
     "Computer",
     JSON.stringify([]),
     null,
-    0
+    0,
+    "RUN_PresOffice"
   );
   let RUN_SecretStairwell = new Room(
     user,
@@ -825,7 +857,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    difficulty
+    difficulty,
+    "RUN_SecretStairwell"
   );
   let RUN_BasementLanding = new Room(
     user,
@@ -847,7 +880,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0
+    0,
+    "RUN_BasementLanding"
   );
   let RUN_FalloutWarehouse = new Room(
     user,
@@ -878,7 +912,8 @@ function generateRooms(user, game, difficulty) {
     null,
     null,
     null,
-    0
+    0,
+    "RUN_FalloutWarehouse"
   );
   let RUN_BasementHallway = new Room(
     user,
@@ -907,7 +942,8 @@ function generateRooms(user, game, difficulty) {
     "Computer",
     JSON.stringify([]),
     null,
-    difficulty
+    difficulty,
+    "RUN_BasementHallway"
   );
   let RUN_Vault = new Room(
     user,
@@ -935,51 +971,50 @@ function generateRooms(user, game, difficulty) {
     "Desk",
     JSON.stringify(["Letter"]),
     null,
-    0
+    0,
+    "RUN_Vault"
   );
 
   return [
-    [
-      falloutBunker.queryArray,
-      RUW_Entrance.queryArray,
-      RUW_WelcomeDesk,queryArray,
-      RUW_BreakRoom.queryArray,
-      RUW_Hallway1N.queryArray,
-      RUW_ExpLabs.queryArray,
-      RUW_Cubicle1.queryArray,
-      RUW_Hallway1S.queryArray,
-      RUW_Office.queryArray,
-      RUW_FabUnit.queryArray,
-      RUW_ServerW.queryArray,
-      RUW_ParkingLot.queryArray,
-      RUE_Entrance.queryArray,
-      RUE_WelcomeDesk.queryArray,
-      RUE_Cubicle2.queryArray,
-      RUE_Hallway1N.queryArray,
-      RUE_QA.queryArray,
-      RUE_Charging.queryArray,
-      RUE_Hallway1S.queryArray,
-      RUE_SupplyCloset.queryArray,
-      RUE_AdvWeapons.queryArray,
-      RUE_FabUnit.queryArray,
-      RUE_ServerE.queryArray,
-      RUN_Entrance.queryArray,
-      RUN_WelcomeDesk.queryArray,
-      RUN_Cubicle3.queryArray,
-      RUN_Hallway1E.queryArray,
-      RUN_AdminOffice.queryArray,
-      RUN_Cubicle4.queryArray,
-      RUN_Hallway1W.queryArray,
-      RUN_Treasury.queryArray,
-      RUN_aiLab.queryArray,
-      RUN_Hallway3N.queryArray,
-      RUN_MainServer.queryArray,
-      RUN_PresOffice.queryArray,
-      RUN_SecretStairwell.queryArray,
-      RUN_BasementLanding.queryArray,
-      RUN_FalloutWarehouse.queryArray,
-      RUN_BasementHallway.queryArray,
-      RUN_Vault.queryArray
-    ]
-  ]
+    falloutBunker.queryArray,
+    RUW_Entrance.queryArray,
+    RUW_WelcomeDesk.queryArray,
+    RUW_BreakRoom.queryArray,
+    RUW_Hallway1N.queryArray,
+    RUW_ExpLabs.queryArray,
+    RUW_Cubicle1.queryArray,
+    RUW_Hallway1S.queryArray,
+    RUW_Office.queryArray,
+    RUW_FabUnit.queryArray,
+    RUW_ServerW.queryArray,
+    RUW_ParkingLot.queryArray,
+    RUE_Entrance.queryArray,
+    RUE_WelcomeDesk.queryArray,
+    RUE_Cubicle2.queryArray,
+    RUE_Hallway1N.queryArray,
+    RUE_QA.queryArray,
+    RUE_Charging.queryArray,
+    RUE_Hallway1S.queryArray,
+    RUE_SupplyCloset.queryArray,
+    RUE_AdvWeapons.queryArray,
+    RUE_FabUnit.queryArray,
+    RUE_ServerE.queryArray,
+    RUN_Entrance.queryArray,
+    RUN_WelcomeDesk.queryArray,
+    RUN_Cubicle3.queryArray,
+    RUN_Hallway1E.queryArray,
+    RUN_AdminOffice.queryArray,
+    RUN_Cubicle4.queryArray,
+    RUN_Hallway1W.queryArray,
+    RUN_Treasury.queryArray,
+    RUN_aiLab.queryArray,
+    RUN_Hallway3N.queryArray,
+    RUN_MainServer.queryArray,
+    RUN_PresOffice.queryArray,
+    RUN_SecretStairwell.queryArray,
+    RUN_BasementLanding.queryArray,
+    RUN_FalloutWarehouse.queryArray,
+    RUN_BasementHallway.queryArray,
+    RUN_Vault.queryArray,
+  ];
 }
